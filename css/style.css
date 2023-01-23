@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.tools{
+    box-sizing: border-box;
+    width: 20%;
+    height: 40vw;
+
+    background-color: aquamarine;
+}
+
+.sketch{
+    box-sizing: border-box;
+    width: 40vw;
+    height: 40vw;
+    border: 0.5rem solid gray;
+    background-color: rgb(202, 22, 202);
+    display: flex;
+    flex-flow: column;
+}
+
+.test{
+    border: 1px solid black;
+}
+
+.row{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.column{
+    flex: 1 1 auto;
+}
