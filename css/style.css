@@ -26,15 +26,13 @@
     box-sizing: border-box;
     width: 40vw;
     height: 40vw;
-    border: 0.5rem solid gray;
+    border: 0.4vw solid gray;
     background-color: rgb(202, 22, 202);
     display: flex;
     flex-flow: column;
 }
 
-.test{
-    border: 1px solid black;
-}
+
 
 .row{
     display: flex;
