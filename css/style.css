@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -32,13 +33,17 @@
     flex-flow: column;
 }
 
-
+.test{
+    
+}
 
 .row{
     display: flex;
     flex: 1 1 auto;
+    
 }
 
 .column{
     flex: 1 1 auto;
+    user-select: none;
 }

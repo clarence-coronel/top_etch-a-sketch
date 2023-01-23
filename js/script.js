@@ -8,7 +8,6 @@ let active = false;
 
 document.addEventListener('mousedown', () => active = true);
 document.addEventListener('mouseup', () => active = false);
-document.addEventListener('drag', () => active = false);
 
 createSketch();
 
@@ -34,8 +33,8 @@ function createSketch(){
             row[currentRow].appendChild(column[currentCol]);
 
 
-                column[currentCol].addEventListener('mouseenter', changeBg);
-                column[currentCol].addEventListener('mousedown', changeBg2);
+                 column[currentCol].addEventListener('mouseover', changeBg);
+                 column[currentCol].addEventListener('mousedown', changeBg);
 
             
         }
@@ -43,13 +42,10 @@ function createSketch(){
     }
 }
 
-function changeBg(){
-    if(active) {
-        this.style.backgroundColor = 'black';
+function changeBg(e){
+    if(e.type === 'mouseover' && !active) {
+        return;
     }
-}
-
-function changeBg2() {
     this.style.backgroundColor = 'black';
 }
 
