@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +10,7 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color: rgb(34, 33, 33);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -19,8 +22,12 @@
     box-sizing: border-box;
     width: 20%;
     height: 40vw;
-
-    background-color: aquamarine;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3%;
+    border-radius: 2rem;
 }
 
 .sketch{
@@ -31,10 +38,7 @@
     background-color: rgb(202, 22, 202);
     display: flex;
     flex-flow: column;
-}
-
-.test{
-    
+    border-radius: 2rem;
 }
 
 .row{
@@ -46,4 +50,28 @@
 .column{
     flex: 1 1 auto;
     user-select: none;
+}
+
+.btn{
+    background-color: #ECE6DB;
+    border-radius: 1rem;
+    border: 0;
+    color: rgb(0, 0, 0);
+    margin: 2rem;
+    width: 10vw;
+    height: 3vw;
+
+    transition: transform .2s;
+
+    font-size: 2rem;
+
+    font-weight: 600;
+
+    font-family: 'Cabin Sketch', cursive;
+    
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
