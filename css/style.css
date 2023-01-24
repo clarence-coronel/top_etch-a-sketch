@@ -26,7 +26,6 @@
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 3%;
     border-radius: 2rem;
 }
 
@@ -57,21 +56,44 @@
     border-radius: 1rem;
     border: 0;
     color: rgb(0, 0, 0);
-    margin: 2rem;
+    margin: 1rem;
     width: 10vw;
     height: 3vw;
-
     transition: transform .2s;
-
-    font-size: 2rem;
-
+    font-size: 1.5vw;
     font-weight: 600;
-
     font-family: 'Cabin Sketch', cursive;
-    
 }
 
-.btn:hover{
+.btn:hover, #colorPicker:hover{
     transform: scale(1.05);
     cursor: pointer;
+}
+
+#colorPicker{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 1rem;
+}
+
+
+#colorPicker::-webkit-color-swatch{
+    border-radius: 50px;
+    border: none;
+}
+
+#colorPicker::-moz-color-swatch{
+    border-radius: 50px;
+    border: none;
+}
+
+.rangeIndicator{
+    color: white;
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
 }

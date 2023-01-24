@@ -1,28 +1,38 @@
 //TODO once i meet the requirements lagyan undo functionality? yung huling stroke mawawala. not sure if babagay since may eraser na
 
-let num;
-
 const AREA = document.querySelector('.sketch');
+const SELECTOR = document.querySelector('.gridSelector');
+const gridIndicator = document.querySelector('.rangeIndicator');
 let column;
 let row;
-
 let coloredCtr = 0;
 let divNum = 0;
+
+
+let num = parseInt(SELECTOR.value);
+createSketch();
+
+gridIndicator.textContent = SELECTOR.value;
+
 
 let active = false;
 
 window.addEventListener('mousedown', () => active = true);
 window.addEventListener('mouseup', () => active = false);
 
+SELECTOR.addEventListener('change', () => {
+    num = parseInt(SELECTOR.value);
+    gridIndicator.textContent = SELECTOR.value;
 
-createSketch();
+    let del = document.querySelectorAll('.row');
+    del.forEach((d) => d.parentNode.removeChild(d));
+    createSketch();  
+});
 
 function createSketch(){
     
     
     for(let i = 1; i <= num; i++){
-
-        let currentRow = i-1;
     
         row = document.createElement('div');
         row.classList.add('test');
