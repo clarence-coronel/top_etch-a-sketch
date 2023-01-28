@@ -6,24 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-    <title>Etch-a-Sketch!</title>
+    <title>Etch-A-Sketch!</title>
 </head>
 <body>
     <div class="container">
-        <div class="tools">
-            <input id="colorPicker" type="color" value="#808080" />
-            <button class="btn color">Color Mode</button>
-            <button class="btn rgb">RGB Mode</button>
-            <button class="btn eraser">Eraser</button>
-            <button class="btn clear">Clear</button>  
-
-            <input class='gridSelector' type="range" id="range_weight" value="8" min="8" max="64" step="8">
-            <span class="rangeIndicator">8</span>
+        <div class="title">
+            <h1>Etch-A-Sketch!</h1>
         </div>
-        <div class="sketch">
-        
+        <div class="app">
+            <div class="tools">
+                <input id="colorPicker" type="color" value="#808080" />
+                <button class="btn color" data-mode="COLOR_MODE">Color Mode</button>
+                <button class="btn rgb" data-mode="RGB_MODE">RGB Mode</button>
+                <button class="btn eraser" data-mode="ERASER_MODE">Eraser Mode</button>
+                <button class="btn clear">Clear</button>  
+                <input class='gridSelector' type="range" id="range_weight" value="32" min="8" max="64" step="8">
+                <span class="rangeIndicator"></span>
+            </div>
+            <div class="grid">
+            
+            </div>
+        </div>
+        <div class="footer">
+            Copyright&nbsp&copy&nbsp <script>document.write(new Date().getFullYear())</script> &nbsp Clarence Coronel &nbsp
         </div>
     </div>
-      
+    
 </body>
 </html>
