@@ -10,37 +10,40 @@ const INDICATOR = document.querySelector('.rangeIndicator');
 const BTNS = document.querySelectorAll('.color, .rgb, .eraser');
 const COLORPICKER = document.querySelector('#colorPicker');
 const CLEAR = document.querySelector('.clear');
+const MODES = ['COLOR_MODE', 'RGB_MODE', 'ERASER_MODE'];
 
 let column;
 let row;
 let coloredCtr = 0;
 let divNum = 0;
-let color = COLORPICKER.value;
+let color = COLORPICKER.value; //gives color the default value of the color picker
 
-
-COLORPICKER.addEventListener('change', () => color = COLORPICKER.value);
-
-const MODES = ['COLOR_MODE', 'RGB_MODE', 'ERASER_MODE'];
-let currentMode = MODES[0];
-
-let num = parseInt(SELECTOR.value);
-createGrid();
-
-INDICATOR.textContent = SELECTOR.value + ' x ' + SELECTOR.value;
-
-
+//determines if we are holding mouse button in the website
 let active = false;
-
 window.addEventListener('mousedown', () => active = true);
 window.addEventListener('mouseup', () => active = false);
 
+
+
+INDICATOR.textContent = SELECTOR.value + ' x ' + SELECTOR.value;
+
+let currentMode = MODES[0];
+let num = parseInt(SELECTOR.value);
+
+//Color mode is selected by default, automatically styles it as selected at runtime
 BTNS[0].style.color = '#222121';
 BTNS[0].style.backgroundColor = 'white';
+
+//if we change the colorpicker value it would automatically change the color variable content
+COLORPICKER.addEventListener('change', () => color = COLORPICKER.value);
+
+
 BTNS.forEach((btn) => btn.addEventListener('click', select));
 
 SELECTOR.addEventListener('change', change);
 CLEAR.addEventListener('click', change);
 
+createGrid();
 
 function randColor(){
     let letters = '0123456789ABCDEF';
