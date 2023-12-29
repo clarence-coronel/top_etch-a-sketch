@@ -106,7 +106,7 @@ function createGrid(){
     
         for(let j = 1; j <= num; j++){
     
-            let currentCol = j-1;
+            // let currentCol = j-1;
             
             column = document.createElement('div');
             column.classList.add('column');
@@ -127,7 +127,6 @@ function createGrid(){
 }
 
 function changeBg(e){
-    
 
     if((e.type === 'mouseover' && !active) || (e.type === 'touchmove' && !active)) { //if our cursor is not hovering AND mouse is not down it will simply return and nothing would happen in the grid
         return;
@@ -140,6 +139,9 @@ function changeBg(e){
     }else if(currentMode == MODES[2]){
         e.target.style.backgroundColor = 'white';
     }
+
+
+    
     
     // console.log(e.target.getAttribute('data-oldColor'));
     // console.log(e.target.getAttribute('data-currentColor'));
