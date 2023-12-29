@@ -4,6 +4,7 @@
 // having each pass just add another 10% of black to it so that only after 10 passes is the square 
 // completely black.
 
+
 const GRID = document.querySelector('.grid');
 const SELECTOR = document.querySelector('.gridSelector');
 const INDICATOR = document.querySelector('.rangeIndicator');
@@ -22,6 +23,14 @@ let color = COLORPICKER.value; //gives color the default value of the color pick
 let active = false;
 window.addEventListener('mousedown', () => active = true);
 window.addEventListener('mouseup', () => active = false);
+
+window.addEventListener('touchstart', () => {
+    active = true
+});
+window.addEventListener('touchend', () => {
+    active = false
+});
+
 
 
 
@@ -103,8 +112,12 @@ function createGrid(){
             column.classList.add('column');
             divNum++;
             column.setAttribute('data-no',`no${divNum}`);   
+            
             column.addEventListener('mouseover', changeBg);
             column.addEventListener('mousedown', changeBg);
+
+            column.addEventListener('touchmove', changeBg);
+            column.addEventListener('touchstart', changeBg);
 
             row.appendChild(column);
             
@@ -114,8 +127,9 @@ function createGrid(){
 }
 
 function changeBg(e){
+    
 
-    if(e.type === 'mouseover' && !active) { //if our cursor is not hovering AND mouse is not down it will simply return and nothing would happen in the grid
+    if((e.type === 'mouseover' && !active) || (e.type === 'touchmove' && !active)) { //if our cursor is not hovering AND mouse is not down it will simply return and nothing would happen in the grid
         return;
     }
 
@@ -127,9 +141,9 @@ function changeBg(e){
         e.target.style.backgroundColor = 'white';
     }
     
-    console.log(e.target.getAttribute('data-oldColor'));
-    console.log(e.target.getAttribute('data-currentColor'));
-    console.log(e.target.getAttribute('data-no'));
+    // console.log(e.target.getAttribute('data-oldColor'));
+    // console.log(e.target.getAttribute('data-currentColor'));
+    // console.log(e.target.getAttribute('data-no'));
 
 
 }
