@@ -44,7 +44,7 @@ BTNS[0].style.color = '#222121';
 BTNS[0].style.backgroundColor = 'white';
 
 //if we change the colorpicker value it would automatically change the color variable content
-COLORPICKER.addEventListener('change', () => color = COLORPICKER.value);
+// COLORPICKER.addEventListener('change', () => color = COLORPICKER.value); no need na
 
 
 BTNS.forEach((btn) => btn.addEventListener('click', select));
@@ -133,7 +133,7 @@ function changeBg(e){
     }
 
     if(currentMode == MODES[0]){ //if current mode is equal to color mode
-        e.target.style.backgroundColor = color;
+        e.target.style.backgroundColor = COLORPICKER.value;
     }else if(currentMode == MODES[1]){
         e.target.style.backgroundColor = randColor();
     }else if(currentMode == MODES[2]){
